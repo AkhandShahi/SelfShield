@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>SelfShield.com</title>
+
+    <!-- Bootstrap core CSS -->
+
+
+
+    <!-- Additional CSS Files
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+     -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'assets/css/fontawesome.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'assets/css/templatemo-edu-meeting.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'assets/css/owl.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'assets/css/lightbox.css')}}">
+<!--
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+-->
+  </head>
+
+<body>
+
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          Self Shield
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+
+                          <li class="scroll-to-section"><a href="#apply">User Register</a></li>
+
+                          <li class="scroll-to-section"><a href="#vehicle_reg">Vehicle Register</a></li>
+                          <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="{{url_for('static', filename='assets/images/banner.mp4')}}" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="caption">
+              <h6>You are welcome,</h6>
+              <h2>Enjoy you travel with SelfShield</h2>
+              <p>Enjoy your tour with a security tool that is <a rel="nofollow" href="" target="_blank">SelfShield. </a>All the tools and services are freely available for registered students.</p>
+              <div class="main-button-red">
+                  <div class="scroll-to-section"><a href="#contact">Sign in</a></div>
+              </div>
+          </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
+
+  <section class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-service-item owl-carousel">
+          
+            <div class="item">
+              <div class="icon">
+                <img src="{{url_for('static', filename = 'assets/images/shield.png')}}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Reducing Crime</h4>
+                <p>We are trying to reduce the crime by providing the security system.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{{url_for('static', filename = 'assets/images/shield.png')}}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Full Data Privacy</h4>
+                <p>To maintain the user trust we are providing full privacy to the users.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{{url_for('static', filename = 'assets/images/shield.png')}}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Recommending better Places</h4>
+                <p>We recommends the places with zero or very low crime.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="upcoming-meetings" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Our Services</h2>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="categories">
+            <h4>Our Objectives</h4>
+            <ul>
+              <li><a href="#">Provide a security system to users</a></li>
+              <li><a href="#">Reduce the crime by awaring the users</a></li>
+              <li><a href="#">Improve ourselve by the your feedbacks</a></li>
+              <li><a href="#">Build more tools to create secure environment</a></li>
+
+            </ul>
+            <div class="main-button-red">
+              <a href="meetings.html">Share</a>
+            </div>
+          </div>
+                <br><br><br>
+                <br><br>
+           <div class="categories">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Rules and Regulation by MHRD</a></li>
+              <li><a href="#">Advise by WHO</a></li><br>
+              <li><a href="#">Suggestions by FBI</a></li>
+              <li><a href="#">Suggestions by SelfShield</a></li>
+
+            </ul>
+            <div class="main-button-red">
+              <a href="meetings.html">Share</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+
+                  <a href="meeting-details.html"><img src="{{url_for('static', filename = 'assets/images/ic1.jpg')}}" alt="New Lecturer Meeting"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Step<span>1</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>Register Yourself</h4></a>
+                  <p>Enter the required details<br>to get registered.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                 <a href="meeting-details.html"><img src="{{url_for('static', filename = 'assets/images/ic2.jpg')}}" alt="Online Teaching"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Step<span>2</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>Sign in</h4></a>
+                  <p>Enter you id and password<br>to sign in into your account.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+
+                  <a href="meeting-details.html"><img src="{{url_for('static', filename = 'assets/images/ic3.jpg')}}" alt="Higher Education"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Step<span>3</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>Select Vehicle</h4></a>
+                  <p>Get all the details of selected vehicle<br> by scanning QR in camera</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+
+                  <a href="meeting-details.html"><img src="{{url_for('static', filename = 'assets/images/ic4.jpg')}}" alt="Student Training"></a>
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>Tool<span>4</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><h4>Get Crime Map</h4></a>
+                  <p>Get the crime map<br>and some recommendations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="our-courses" id="courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Our Developers</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="owl-courses-item owl-carousel">
+            <div class="item">
+              <img src="{{url_for('static', filename = 'assets/images/Akhand.jpeg')}}" alt="Course One">
+              <div class="down-content">
+                <h4>Akhand Shahi</h4>
+                <div class="info">
+                  <div class="row">
+
+                       <span>Data Scientist</span>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{{url_for('static', filename = 'assets/images/Shreya.jpeg')}}" alt="Course Two">
+              <div class="down-content">
+                <h4>Shreya Singh</h4>
+                <div class="info">
+                  <div class="row">
+
+                       <span>Data Analyst</span>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{{url_for('static', filename = 'assets/images/Mithlesh.png')}}" alt="">
+              <div class="down-content">
+                <h4>Mithlesh Patel</h4>
+                <div class="info">
+                  <div class="row">
+
+                       <span>Fullstack Developer</span>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{{url_for('static', filename = 'assets/images/Amir.jpeg')}}" alt="">
+              <div class="down-content">
+                <h4>Mohammad Amir</h4>
+                <div class="info">
+                  <div class="row">
+
+                       <span>QA Engineer</span>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2>Facts About SelfShield</h2>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">51</div>
+                    <div class="count-title">Active Users</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">5</div>
+                    <div class="count-title">Backend Team</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="count-area-content new-students">
+                    <div class="count-digit">13</div>
+                    <div class="count-title">Vehicle Partner</div>
+                  </div>
+                </div> 
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">3</div>
+                    <div class="count-title">Cities Covered</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col-lg-6 align-self-center">
+         <img src="{{url_for('static', filename = 'assets/images/shield.png')}}">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-us" id="vehicle_reg">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 align-self-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <form id="contact" action="" method="post">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>Join as Vehicle Partner</h2>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
+                  </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input name="subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <textarea name="message" type="text" class="form-control" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="button">SEND REQUEST</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="right-info">
+            <ul>
+              <li>
+                <h6>Phone Number</h6>
+                <span>9354577367</span>
+              </li>
+              <li>
+                <h6>Email Address</h6>
+                <span>info@selfshield.com</span>
+              </li>
+              <li>
+                <h6>Street Address</h6>
+                <span>Gorakhpur - Mohaddipur, Orion Mall, India</span>
+              </li>
+              <li>
+                <h6>Website URL</h6>
+                <span>www.selfshield.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Copyright © 2023 Self Shield Co., Ltd. All Rights Reserved.
+          <br>Design: <a href="" target="_parent" title="">Team SelfShield</a></p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <link >
+
+    <script src="{{url_for('static', filename = 'vendor/jquery/jquery.min.js')}}"></script>
+
+    <script src="{{url_for('static', filename = 'vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  <script src="{{url_for('static', filename = 'assets/js/isotope.min.js')}}"></script>
+
+  <script src="{{url_for('static', filename = 'assets/js/owl-carousel.js')}}"></script>
+
+  <script src="{{url_for('static', filename = 'assets/js/lightbox.js')}}"></script>
+
+  <script src="{{url_for('static', filename = 'assets/js/tabs.js')}}"></script>
+
+  <script src="{{url_for('static', filename = 'assets/js/video.js')}}"></script>
+
+  <script src="{{url_for('static', filename = 'assets/js/slick-slider.js')}}"></script>
+
+  <script src="{{url_for('static', filename = 'assets/js/custom.js')}}"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+</body>
+
+</body>
+</html>

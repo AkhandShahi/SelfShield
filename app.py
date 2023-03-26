@@ -9,5 +9,18 @@ app.static_folder = 'static'
 def home():
     return render_template('index.html')
 
+@app.route('/login')
+def login():
+    pass
+
+@app.route('/register')
+def register():
+    return render_template('sign.html')
+
+
+@app.route('/logout')
+def logout():
+    pass
+
 if __name__ == "__main__":
     app.run()

@@ -4,8 +4,8 @@
 
 ##### There are two features that are integrated with this software
 
-    1. Speech to text language convorter
-    2. Human Behavior Detectiion
+    1. Provide secured vehicle service
+    2. Recommend safe places
 
 ## Software and Tools Required
   1. [Pycharm IDE](https://www.jetbrains.com/pycharm/download/#section=windows)

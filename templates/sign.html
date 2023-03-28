@@ -6,67 +6,155 @@
     <!---<title> Responsive Registration Form | CodingLab </title>--->
     <link rel="stylesheet" href="{{url_for('static', filename = 'styles/style2.css')}}">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'assets/css/fontawesome.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'assets/css/templatemo-edu-meeting.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'assets/css/owl.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'assets/css/lightbox.css')}}">
    </head>
 <body>
-  <div class="container">
-    <div class="title">Registration</div>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
+
+<section class = 'signup'>
+    <div class="container">
+<br> <br><br>
+      <div style="text-align:center"><i class="fa fa-user-plus" style="font-size:48px;color:blue"></i><h4>Register Here</h4></div>
+      <br>
+      <div class="row">
+
+        <div class="col-lg-6 ">
+          <div class="row">
+            <div class="col-lg-12">
+
+              <div class="container">
+                  <div class="title">Register as User</div>
+                  <div class="content">
+                    <form action="#">
+                      <div class="user-details">
+                        <div class="input-box">
+                          <span class="details">Full Name</span>
+                          <input type="text" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-box">
+                          <span class="details">Email</span>
+                          <input type="email" placeholder="Enter your email" required>
+                        </div>
+                           <div class="input-box">
+                          <span class="details">Phone Number</span>
+                          <input type="tel" placeholder="Enter your number" required>
+                           </div>
+
+                        <div class="input-box">
+                          <span class="details">Password</span>
+                          <input type="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="input-box">
+                          <span class="details">Confirm Password</span>
+                          <input type="password" placeholder="Confirm your password" required>
+                        </div>
+                      </div>
+
+
+                        <div class="input-box">
+                          <span class="details">Upload Your Photo</span>
+
+                          <input type="file" id="img" name="u-img" accept="image/*" required>
+
+                        </div>
+
+
+
+
+                      <div class="button">
+                        <input type="submit" value="Register">
+                      </div>
+                      <div >
+                        Already a member!<a href="login"> Login </a>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+
+            </div>
           </div>
         </div>
-        <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          <span class="gender-title">Gender</span>
-          <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
-            </label>
-          </div>
+
+        <div class="col-lg-6">
+                      <div class="container">
+              <div class="title">Register as Vehicle Partner</div>
+              <div class="content">
+                <form action="#">
+                  <div class="user-details">
+                    <div class="input-box">
+                      <span class="details">Full Name</span>
+                      <input type="text" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="input-box">
+                      <span class="details">Email</span>
+                      <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                      <span class="details">Phone Number</span>
+                      <input type="tel" placeholder="Enter your number" required>
+                    </div>
+                    <div class="input-box">
+                      <span class="details">Password</span>
+                      <input type="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="input-box">
+                      <span class="details">Confirm Password</span>
+                      <input type="password" placeholder="Confirm your password" required>
+                    </div>
+                  </div>
+
+                  <div class="input-box">
+                          <span class="details">Upload Your Photo</span>
+
+                          <input type="file" id="v-img" name="u-img" accept="image/*" required>
+
+                  </div>
+
+                  <div class="button-v">
+                    <input type="submit" value="Register">
+                  </div>
+                  <div >
+                    Already a member!<a href="login"> Login </a>
+                  </div>
+                </form>
+              </div>
+            </div>
         </div>
-        <div class="button">
-          <input type="submit" value="Register">
-        </div>
-        <div >
-          Already a member!<a href="/"> Login </a>
-        </div>
-      </form>
+      </div>
+    <br>
+       <div class="main-button-red">
+                    <div style="text-align:center" ><a href="/">Go to Home Page</a></div>
+                  </div>
     </div>
-  </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

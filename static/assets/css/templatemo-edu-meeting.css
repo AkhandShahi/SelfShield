@@ -1805,13 +1805,15 @@ responsive
   section.our-facts .video {
     margin-left: 0px;
     margin-top: 15px;
+
   }
 
   section.contact-us #contact {
     margin-bottom: 30px;
   }
 
-}
+
+
 
 @media (max-width: 767px) {
 

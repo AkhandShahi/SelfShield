@@ -31,6 +31,24 @@
     <div class="container">
       <div style="text-align:center"><i class="fa fa-user" style="font-size:48px;color:green"></i><h4>Login Here</h4></div>
       <br>
+        {% if errors %}
+    <div class="alert alert-danger" >
+        {% for error in errors %}
+            <p><i class="fa fa-warning" style="font-size:24px;color:red"></i>  {{ error }}</p>
+        {% endfor %}
+    </div>
+         {% endif %}
+
+    <!-- --------------------- -->
+
+        {% if info %}
+    <div class="alert alert-success"  >
+        {% for data in info %}
+            <p><i class="fa fa-check" style="font-size:24px;color:green"></i>  {{ data }}</p>
+        {% endfor %}
+    </div>
+         {% endif %}
+
       <div class="row">
         <div class="col-lg-6 align-self-center">
           <div class="row">
@@ -39,17 +57,17 @@
               <div class="container">
                   <div class="title">User Login</div>
                   <div class="content">
-                   <form action="#">
+                   <form action="{{ url_for('login') }}", method="post">
                   <div class="user-details">
 
                     <div class="input-box">
                       <span class="details">Email</span>
-                      <input type="email" placeholder="Enter your email" required>
+                      <input type="email" placeholder="Enter your email" name="email" required>
                     </div>
 
                     <div class="input-box">
                       <span class="details">Password</span>
-                      <input type="password" placeholder="Enter your password" required>
+                      <input type="password" placeholder="Enter your password" name="password" required>
                     </div>
 
                   </div>
@@ -72,17 +90,17 @@
                       <div class="container">
               <div class="title">Vehicle Partner Login</div>
               <div class="content">
-                <form action="#">
+                <form action="{{ url_for('v_login')}}" method="post">
                   <div class="user-details">
 
                     <div class="input-box">
                       <span class="details">Email</span>
-                      <input type="email" placeholder="Enter your email" required>
+                      <input type="email" placeholder="Enter your email" name="email" required>
                     </div>
 
                     <div class="input-box">
                       <span class="details">Password</span>
-                      <input type="password" placeholder="Enter your password" required>
+                      <input type="password" placeholder="Enter your password" name="password" required>
                     </div>
 
                   </div>

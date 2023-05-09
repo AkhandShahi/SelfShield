@@ -28,9 +28,16 @@
 
 <section class = 'signup'>
     <div class="container">
-<br> <br><br>
+<br> <br><br><br>
       <div style="text-align:center"><i class="fa fa-user-plus" style="font-size:48px;color:blue"></i><h4>Register Here</h4></div>
       <br>
+        {% if errors %}
+    <div class="alert alert-danger" >
+        {% for error in errors %}
+            <p><i class="fa fa-warning" style="font-size:24px;color:red"></i>  {{ error }}</p>
+        {% endfor %}
+    </div>
+         {% endif %}
       <div class="row">
 
         <div class="col-lg-6 ">
@@ -40,29 +47,29 @@
               <div class="container">
                   <div class="title">Register as User</div>
                   <div class="content">
-                    <form action="#">
+                    <form action="{{ url_for('register') }}" method="post" enctype="multipart/form-data">
                       <div class="user-details">
                         <div class="input-box">
                           <span class="details">Full Name</span>
-                          <input type="text" placeholder="Enter your name" required>
+                          <input type="text" placeholder="Enter your name" name="name" required>
                         </div>
 
                         <div class="input-box">
                           <span class="details">Email</span>
-                          <input type="email" placeholder="Enter your email" required>
+                          <input type="email" placeholder="Enter your email" name="email" required>
                         </div>
                            <div class="input-box">
                           <span class="details">Phone Number</span>
-                          <input type="tel" placeholder="Enter your number" required>
+                          <input type="tel" placeholder="Enter your number" name="phone" required>
                            </div>
 
                         <div class="input-box">
                           <span class="details">Password</span>
-                          <input type="password" placeholder="Enter your password" required>
+                          <input type="password" placeholder="Enter your password" name="pwd1" required>
                         </div>
                         <div class="input-box">
                           <span class="details">Confirm Password</span>
-                          <input type="password" placeholder="Confirm your password" required>
+                          <input type="password" placeholder="Confirm your password" name="pwd2" required>
                         </div>
                       </div>
 
@@ -70,7 +77,7 @@
                         <div class="input-box">
                           <span class="details">Upload Your Photo</span>
 
-                          <input type="file" id="img" name="u-img" accept="image/*" required>
+                          <input type="file" id="img" name="image" accept="image/*" required>
 
                         </div>
 
@@ -95,35 +102,35 @@
                       <div class="container">
               <div class="title">Register as Vehicle Partner</div>
               <div class="content">
-                <form action="#">
+                <form action="{{ url_for('v_register') }}", method="post", enctype="multipart/form-data">
                   <div class="user-details">
                     <div class="input-box">
                       <span class="details">Full Name</span>
-                      <input type="text" placeholder="Enter your name" required>
+                      <input type="text" placeholder="Enter your name" name="v-name" required>
                     </div>
 
                     <div class="input-box">
                       <span class="details">Email</span>
-                      <input type="email" placeholder="Enter your email" required>
+                      <input type="email" placeholder="Enter your email" name="v-email" required>
                     </div>
                     <div class="input-box">
                       <span class="details">Phone Number</span>
-                      <input type="tel" placeholder="Enter your number" required>
+                      <input type="tel" placeholder="Enter your number" name="v-phone" required>
                     </div>
                     <div class="input-box">
                       <span class="details">Password</span>
-                      <input type="password" placeholder="Enter your password" required>
+                      <input type="password" placeholder="Enter your password" name="pwd1" required>
                     </div>
                     <div class="input-box">
                       <span class="details">Confirm Password</span>
-                      <input type="password" placeholder="Confirm your password" required>
+                      <input type="password" placeholder="Confirm your password" name="pwd2" required>
                     </div>
                   </div>
 
                   <div class="input-box">
                           <span class="details">Upload Your Photo</span>
 
-                          <input type="file" id="v-img" name="u-img" accept="image/*" required>
+                          <input type="file" id="v-img" name="v-image" accept="image/*" required>
 
                   </div>
 

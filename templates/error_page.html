@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SelfShield.com/Error</title>
+</head>
+<body>
+  {% if errors %}
+    <div class="alert alert-danger">
+        {% for error in errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+</body>
+</html>

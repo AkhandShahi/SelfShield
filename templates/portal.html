@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SelfShield.com/PartnerPortal</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+.avatar-sub {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border: 3px solid teal;
+}
+</style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-secondary">
+
+    <a class="navbar-brand" href="#"><strong>SELF SHIELD</strong></a>
+ <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h3><img class = "avatar" src= "{{ url_for('static', filename = 'partner_img/' + user.image)}}" > {{ user.name }}</h3>
+
+    <h1 class="display-4"><strong>Welcome, to the Partner Portal</strong></h1>
+  <p class="lead">Add the driver and vehicle details to make them available for booking.</p>
+  <hr class="my-4">
+  <p style="color:red">*Aadhar card of the driver is mandatory to upload while adding driver.</p>
+  <p class="lead">
+   <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Add Driver
+</button>
+ <a style="background-color:teal;" href="logout" class="btn btn-secondary">Logout</a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-cloud-upload" style="font-size:24px;color:Blue"></i> Upload Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form action="{{ url_for('add_driver') }}" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone</label>
+    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" required>
+  </div>
+  <div class="form-group">
+    <label for="vehicle">Vehicle</label>
+    <input type="tel" class="form-control" id="vehicle" name="vehicle" placeholder="Enter Vehicle Name" required>
+    <small id="vehicleHelp" class="form-text text-muted">Example: Mahindra SUV, Swift Desire, Wagnor.</small>
+  </div>
+  <div class="form-group">
+    <label for="number">Vehicle Number</label>
+    <input type="tel" class="form-control" id="number" name="number" placeholder="Enter Vehicle Number" required>
+    <small id="numberHelp" class="form-text text-muted">Example: UP53 AXLM.</small>
+  </div>
+  <div class="form-group">
+    <label for="photo">Upload Photo</label>
+    <input type="file" name="image" accept="image/*" class="form-control-file" id="photo" required>
+  </div>
+  <div class="form-group">
+    <label for="aadhar">Upload Aadhar</label>
+    <input type="file" name="aadhar" accept="image/*" class="form-control-file" id="aadhar" required>
+  </div>
+  <div class="form-group">
+    <label for="license">Upload License</label>
+    <input type="file" accept="image/*" name="license" class="form-control-file" id="license" required>
+  </div>
+  <div class="form-group">
+    <label for="owner_id">Owner_Id</label>
+    <input type="text"  name="id" class="form-control-file" id="owner_id" value={{user._id}} readonly>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+  </p>
+        </div>
+</div>
+
+
+
+{% for i in range(count)  %}
+
+    <section class="container">
+        <div class="card">
+            <h5 class="card-header"><img class = "avatar-sub" src= "{{ url_for('static', filename = 'driver_image/' + images[i])}}" > <strong>{{ names[i] }}</strong></h5>
+      <div class="card-body">
+
+        <p class="card-text"><strong>Phone:</strong> {{ phone[i] }}</p>
+        <p class="card-text"><strong>Vehicle:</strong> {{ vehicle[i] }}</p>
+        <p class="card-text"><strong>Number:</strong> {{ number[i] }}</p>
+                <form action="{{ url_for('delete_driver') }}" method="post">
+                    <input type="hidden" id="driver_id" name="d_id" value= {{driver_id[i]}}>
+                    <button type="submit" class="btn btn-secondary">Delete Driver</button>
+                </form>
+      </div>
+    </div>
+    </section>
+<br><br>
+
+{% endfor %}
+
+
+<br>
+<br>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+
+</body>
+</html>

@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <!---<title> Responsive Registration Form | CodingLab </title>--->
     <link rel="stylesheet" href="{{url_for('static', filename = 'styles/style2.css')}}">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'static/styles/style.css')}}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -22,7 +24,8 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename = 'assets/css/lightbox.css')}}">
 
-      <title>SelfShield.com/Register</title>
+    <title>SelfShield.com/Register</title>
+
    </head>
 <body>
 
@@ -63,10 +66,10 @@
                           <input type="tel" placeholder="Enter your number" name="phone" required>
                            </div>
 
-                        <div class="input-box">
-                          <span class="details">Password</span>
-                          <input type="password" placeholder="Enter your password" name="pwd1" required>
-                        </div>
+                         <div class="input-box">
+                      <span class="details">Password (min 8 character) </span>
+                      <input type="password" placeholder="must contain 1 lower,upper,num" name="pwd1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    </div>
                         <div class="input-box">
                           <span class="details">Confirm Password</span>
                           <input type="password" placeholder="Confirm your password" name="pwd2" required>
@@ -105,7 +108,7 @@
                 <form action="{{ url_for('v_register') }}", method="post", enctype="multipart/form-data">
                   <div class="user-details">
                     <div class="input-box">
-                      <span class="details">Full Name</span>
+                      <span class="details">Full Name (*same as aadhar)</span>
                       <input type="text" placeholder="Enter your name" name="v-name" required>
                     </div>
 
@@ -118,8 +121,8 @@
                       <input type="tel" placeholder="Enter your number" name="v-phone" required>
                     </div>
                     <div class="input-box">
-                      <span class="details">Password</span>
-                      <input type="password" placeholder="Enter your password" name="pwd1" required>
+                      <span class="details">Password (min 8 character) </span>
+                      <input type="password" placeholder="must contain 1 lower,upper,num" name="pwd1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                     </div>
                     <div class="input-box">
                       <span class="details">Confirm Password</span>
@@ -127,7 +130,9 @@
                     </div>
                   </div>
 
-                  <div class="input-box">
+
+
+          <div class="input-box">
                           <span class="details">Upload Your Photo</span>
 
                           <input type="file" id="v-img" name="v-image" accept="image/*" required>
@@ -150,6 +155,7 @@
                     <div style="text-align:center" ><a href="/">Go to Home Page</a></div>
                   </div>
     </div>
+
 
 
 </section>

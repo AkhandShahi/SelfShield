@@ -2,7 +2,14 @@ from bson import ObjectId
 from flask import Flask, render_template, request, redirect, session
 from flask_pymongo import PyMongo
 from werkzeug.utils import secure_filename
+import qrcode
+import json
 import os
+from pyzbar.pyzbar import decode
+import cv2
+import numpy as np
+from pyzbar import pyzbar
+from PIL import Image
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/User"
@@ -10,7 +17,6 @@ mongo = PyMongo(app)
 app.secret_key = 'akhand13shahi'
 app.debug = True
 app.static_folder = 'static'
-
 
 @app.route('/')
 def home():
@@ -36,6 +42,7 @@ def portal():
         vehicle =[]
         number = []
         driver_id = []
+        qr = []
 
         for driver in drivers:
             x = driver['name']
@@ -44,6 +51,7 @@ def portal():
             i = driver['vehicle']
             j = driver['number']
             d_id = driver['_id']
+            qr_code = driver['qr_code']
 
             driver_id.append(d_id)
             phone.append(z)
@@ -51,10 +59,11 @@ def portal():
             images.append(y)
             vehicle.append(i)
             number.append(j)
+            qr.append(qr_code)
 
         count = len(names)
         return render_template('portal.html', user=user, names=names, images=images, count=count,
-                               phone=phone, vehicle=vehicle, number=number, driver_id=driver_id)
+                               phone=phone, vehicle=vehicle, number=number, driver_id=driver_id, qr = qr)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -206,20 +215,30 @@ def add_driver():
         number = request.form['number']
         img = request.files['image']
         aadhar = request.files['aadhar']
-        license_img = request.files['license']
+        license = request.files['license']
         owner_id = request.form['id']
+
+        data = {'name': name, 'phone': phone, 'vehicle': vehicle, 'number': number}
+        data_string = json.dumps(data)
+        qr = qrcode.QRCode(version=1, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=10, border=4)
+        qr.add_data(data_string)
+        qr.make(fit=True)
+        qr_code = qr.make_image(fill_color="black", back_color="white")
+        qr_code_filename = '{}-qr.png'.format(name)
 
         filename1 = secure_filename(img.filename)
         filename2 = secure_filename(aadhar.filename)
-        filename3 = secure_filename(license_img.filename)
+        filename3 = secure_filename(license.filename)
+        filename4 = secure_filename(qr_code_filename)
 
         img.save(os.path.join('static/driver_image', filename1))
         aadhar.save(os.path.join('static/driver_aadhar', filename2))
-        license_img.save(os.path.join('static/driver_license', filename3))
-        users.insert_one({'Owner_id': owner_id, 'name': name, 'phone': phone, 'vehicle': vehicle, 'number': number,
-                          'image': filename1, 'aadhar': filename2, 'license': filename3})
-        return redirect('portal')
+        license.save(os.path.join('static/driver_license', filename3))
+        qr_code.save(os.path.join('static/driver_qr', filename4))
 
+        users.insert_one({'Owner_id': owner_id, 'name': name, 'phone': phone, 'vehicle': vehicle, 'number': number,
+                          'image': filename1, 'aadhar': filename2, 'license': filename3, 'qr_code':filename4})
+        return redirect('portal')
 
 @app.route('/delete_driver', methods=['POST'])
 def delete_driver():
@@ -228,16 +247,32 @@ def delete_driver():
         mongo.db.driver.delete_one({'_id': ObjectId(d_id)})
         return redirect('portal')
 
+def scan_qr_code():
+    cap = cv2.VideoCapture(0)
 
+    while True:
+        ret, frame = cap.read()
 
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
+        decoded_objects = pyzbar.decode(gray)
 
+        cv2.imshow('QR Scanner', frame)
 
+        if decoded_objects:
+            qr_data = decoded_objects[0].data.decode('utf-8')
+            return qr_data
 
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 
+    cap.release()
+    cv2.destroyAllWindows()
 
-
-
+@app.route('/scan')
+def scan():
+    qr_data = scan_qr_code()
+    return qr_data
 
 
 if __name__ == "__main__":

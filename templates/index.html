@@ -133,11 +133,11 @@
                 <br>
 
                   <div class="main-button-red">
-                    <div ><a style="background-color:red" href="logout">Logout</a> <a style="background-color:teal"  href=" ">Book Vehicle</a></div>
+                    <div ><a style="background-color:red" href="logout">Logout</a>
+                      <a style="background-color:greeb" href="scan">Scan QR</a>
                   </div>
+
                         <br>
-
-
 
                   {% else %}
 
@@ -487,6 +487,9 @@
   <script src="{{url_for('static', filename = 'assets/js/slick-slider.js')}}"></script>
 
   <script src="{{url_for('static', filename = 'assets/js/custom.js')}}"></script>
+
+  <script src="{{url_for('static', filename = 'assets/js/qr.js')}}"></script>
+
     <script>
 
         $('.nav li:first').addClass('active');
@@ -536,6 +539,8 @@
         $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 });
+
+
     </script>
 </body>
 

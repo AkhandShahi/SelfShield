@@ -130,8 +130,11 @@
         <p class="card-text"><strong>Phone:</strong> {{ phone[i] }}</p>
         <p class="card-text"><strong>Vehicle:</strong> {{ vehicle[i] }}</p>
         <p class="card-text"><strong>Number:</strong> {{ number[i] }}</p>
+        <a href="{{ url_for('static', filename = 'driver_qr/' + qr[i])}}" download>Download QR</a>
+
                 <form action="{{ url_for('delete_driver') }}" method="post">
                     <input type="hidden" id="driver_id" name="d_id" value= {{driver_id[i]}}>
+                    <br>
                     <button type="submit" class="btn btn-secondary">Delete Driver</button>
                 </form>
       </div>

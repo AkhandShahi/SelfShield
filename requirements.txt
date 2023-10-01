@@ -35,5 +35,4 @@ fonttools~=4.39.2
 pyparsing~=3.0.9
 packaging~=23.0
 kiwisolver~=1.4.4
-zlib~=1.2.13
-openssl~=1.1.1t
+pytesseract
